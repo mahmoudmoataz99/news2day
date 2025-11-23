@@ -1,10 +1,10 @@
-# WeWe - Full Stack Application
+# News2Day - Full Stack Application
 
 A modern full-stack web application built with React frontend and NestJS backend, featuring article management, user authentication, and category organization.
 
 ## Overview
 
-WeWe is a content management platform that enables users to create, read, organize, and manage articles. The application provides a seamless experience for content creators and readers with intuitive article browsing, category filtering, user profiles, and account management.
+News2Day is a content management platform that enables users to create, read, organize, and manage articles. The application provides a seamless experience for content creators and readers with intuitive article browsing, category filtering, user profiles, and account management.
 
 ### Key Features
 
@@ -62,7 +62,7 @@ Project/
 1. Clone the repository
 ```bash
 git clone <repo-url>
-cd wewe
+cd News2Day
 ```
 
 2. Install client dependencies
