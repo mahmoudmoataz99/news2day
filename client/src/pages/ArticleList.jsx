@@ -6,7 +6,7 @@ const ArticleList = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await fetch('http://newstoday-nest.vercel.app/articles');
+      const response = await fetch('https://newstoday-nest.vercel.app/articles');
       const data = await response.json();
       setArticles(data);
     };

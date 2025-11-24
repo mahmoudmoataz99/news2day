@@ -29,7 +29,7 @@ function AllArticles() {
     useEffect(() => {
       const fetchCategories = async () => {
         try {
-          const response = await fetch('http://newstoday-nest.vercel.app/categories');
+          const response = await fetch('https://newstoday-nest.vercel.app/categories');
           const data = await response.json();
           setCategories(data);
         } catch (error) {
@@ -44,8 +44,8 @@ function AllArticles() {
             try {
                 setIsLoading(true);
                 const url = selectedCategory
-                  ? `http://newstoday-nest.vercel.app/articles?category=${encodeURIComponent(selectedCategory)}`
-                  : 'http://newstoday-nest.vercel.app/articles';
+                  ? `https://newstoday-nest.vercel.app/articles?category=${encodeURIComponent(selectedCategory)}`
+                  : 'https://newstoday-nest.vercel.app/articles';
                 
                 const response = await fetch(url);
                 const data = await response.json();

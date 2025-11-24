@@ -35,7 +35,7 @@ const AddArticle = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://newstoday-nest.vercel.app/categories');
+                const response = await axios.get('https://newstoday-nest.vercel.app/categories');
                 // Categories endpoint returns an array directly
                 const categoriesData = Array.isArray(response.data) ? response.data : response.data.data || [];
                 setCategories(categoriesData);
@@ -80,7 +80,7 @@ const AddArticle = () => {
                 return;
             }
 
-            const response = await axios.post('http://newstoday-nest.vercel.app/articles', formData, {
+            const response = await axios.post('https://newstoday-nest.vercel.app/articles', formData, {
               headers: { Authorization: `Bearer ${token}` }
             });
             setMessage('Article added successfully!');

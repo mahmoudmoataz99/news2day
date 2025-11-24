@@ -15,7 +15,7 @@ const Profile = () => {
 
             try {
                 setIsLoading(true);
-                const response = await axios.get(`http://newstoday-nest.vercel.app/articles?email=${encodeURIComponent(user.email)}`);
+                const response = await axios.get(`https://newstoday-nest.vercel.app/articles?email=${encodeURIComponent(user.email)}`);
                 const userArticles = Array.isArray(response.data) ? response.data : response.data.data || [];
                 setUserArticles(userArticles);
             } catch (err) {
@@ -32,12 +32,12 @@ const Profile = () => {
     if (!user) {
         return <Navigate to="/login" replace />;
     }
-    //http://newstoday-nest.vercel.app/user
+    //https://newstoday-nest.vercel.app/user
     const removeArticle = async (id) => {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token') || user.token;
-            await axios.delete(`http://newstoday-nest.vercel.app/articles/${id}`, {
+            await axios.delete(`https://newstoday-nest.vercel.app/articles/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
