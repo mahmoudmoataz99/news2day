@@ -101,7 +101,7 @@ const Settings = () => {
     try {
        const token = localStorage.getItem('token') || user.token;
        const response = await axios.put(
-         `http://localhost:5000/user/myprofile`,
+         `http://newstoday-nest.vercel.app/user/myprofile`,
          {
            firstName: state.formData.firstName,
            lastName: state.formData.lastName,
@@ -137,7 +137,7 @@ const Settings = () => {
     try {
        const token = localStorage.getItem('token') || user.token;
        await axios.put(
-         `http://localhost:5000/user/myprofile`,
+         `http://newstoday-nest.vercel.app/user/myprofile`,
          { Password: state.formData.newPassword },
          { headers: { Authorization: `Bearer ${token}` } }
        );
@@ -163,7 +163,7 @@ const Settings = () => {
   //   dispatch({ type: 'SET_LOADING', payload: true });
 
   //   try {
-  //     await axios.delete('http://localhost:5000/user/delete-account', {
+  //     await axios.delete('http://newstoday-nest.vercel.app/user/delete-account', {
   //       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
   //     });
 

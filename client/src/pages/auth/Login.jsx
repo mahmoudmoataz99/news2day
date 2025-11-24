@@ -54,7 +54,7 @@ const Login = () => {
     setIsError(false);
 
     try {
-      const res = await axios.post('http://localhost:5000/auth/login', formData);
+      const res = await axios.post('http://newstoday-nest.vercel.app/auth/login', formData);
       
       const userData = res.data.data;
       

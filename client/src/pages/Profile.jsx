@@ -15,7 +15,7 @@ const Profile = () => {
 
             try {
                 setIsLoading(true);
-                const response = await axios.get(`http://localhost:5000/articles?email=${encodeURIComponent(user.email)}`);
+                const response = await axios.get(`http://newstoday-nest.vercel.app/articles?email=${encodeURIComponent(user.email)}`);
                 const userArticles = Array.isArray(response.data) ? response.data : response.data.data || [];
                 setUserArticles(userArticles);
             } catch (err) {
@@ -32,12 +32,12 @@ const Profile = () => {
     if (!user) {
         return <Navigate to="/login" replace />;
     }
-    //http://localhost:5000/user
+    //http://newstoday-nest.vercel.app/user
     const removeArticle = async (id) => {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token') || user.token;
-            await axios.delete(`http://localhost:5000/articles/${id}`, {
+            await axios.delete(`http://newstoday-nest.vercel.app/articles/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

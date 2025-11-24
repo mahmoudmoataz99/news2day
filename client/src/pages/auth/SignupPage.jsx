@@ -77,7 +77,7 @@ const SignupPage = () => {
         setIsError(false);
 
         try {
-            const res = await axios.post('http://localhost:5000/auth/signup', formData);
+            const res = await axios.post('http://newstoday-nest.vercel.app/auth/signup', formData);
             
             const userData = res.data.data;
             

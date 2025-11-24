@@ -74,7 +74,7 @@ npm install
 4. **Run the backend server**:
 cd backend
 npm start
-The backend will run on http://localhost:5000.
+The backend will run on http://newstoday-nest.vercel.app.
 
 5. **Run the frontend development server**:
 cd frontend

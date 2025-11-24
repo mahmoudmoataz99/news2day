@@ -9,7 +9,7 @@ function AllArticles() {
         const fetchArticles = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('http://localhost:5000/articles');
+                const response = await fetch('http://newstoday-nest.vercel.app/articles');
                 const data = await response.json();
                 setArticles(data);
             } catch (error) {
