@@ -60,7 +60,7 @@ const SignupPage = () => {
         if (errors[name]) {
             setErrors(prev => ({ ...prev, [name]: '' }));
         }
-        
+
         // Clear success/error message when user modifies form
         if (message && !isLoading) {
             setMessage('');
@@ -77,14 +77,19 @@ const SignupPage = () => {
         setIsError(false);
 
         try {
-            const res = await axios.post('https://newstoday-nest.vercel.app/auth/signup', formData);
-            
+            const First_Name = formData.First_Name;
+            const Last_Name = formData.Last_Name;
+            const email = formData.email;
+            const Password = formData.Password;
+
+            const res = await axios.post('https://newstoday-nest.vercel.app/auth/signup', { First_Name, Last_Name, email, Password });
+
             const userData = res.data.data;
-            
+
             if (!userData || !userData.token) {
                 throw new Error('Invalid response format from server');
             }
-            
+
             // Store token and user data
             localStorage.setItem('token', userData.token);
             setUser(userData);
@@ -93,15 +98,15 @@ const SignupPage = () => {
             setMessage('Signup successful! Redirecting...');
             setIsError(false);
             setIsLoading(false);
-            
+
             // Navigate after showing success
             setTimeout(() => navigate('/'), 1500);
         } catch (error) {
             console.error('Signup error:', error);
             setIsLoading(false);
-            
+
             let errMsg = 'Signup failed';
-            
+
             if (error.response?.data?.message) {
                 errMsg = error.response.data.message;
             } else if (error.response?.status === 409) {
@@ -111,7 +116,7 @@ const SignupPage = () => {
             } else if (error.message) {
                 errMsg = error.message;
             }
-            
+
             setMessage(errMsg);
             setIsError(true);
         }
