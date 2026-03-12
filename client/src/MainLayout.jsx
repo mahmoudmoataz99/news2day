@@ -39,7 +39,7 @@ const MainLayout = ({ children }) => {
                 </button>
 
                 {open && (
-                  <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded shadow-lg z-10" ref={menuRef}>
+                  <div className="absolute right-0 w-max mt-2 bg-white border border-gray-200 rounded shadow-lg z-10" ref={menuRef}>
                     <Link to="/profile" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                       Profile
                     </Link>
@@ -67,7 +67,7 @@ const MainLayout = ({ children }) => {
         </div>
       </nav>
 
-      <section className="bg-gray-200 flex-grow">
+      <section className="bg-gray-200 grow">
         {children}
       </section>
 
