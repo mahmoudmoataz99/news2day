@@ -112,8 +112,8 @@ const Settings = () => {
          }
        );
 
-       setUser(response.data.data);
-       localStorage.setItem('user', JSON.stringify(response.data.data));
+       const updatedUser = response.data.data || response.data;
+       setUser({ ...user, ...updatedUser });
        dispatch({ type: 'SET_MESSAGE', payload: { text: 'Profile updated successfully!', isError: false } });
     } catch (error) {
       dispatch({
