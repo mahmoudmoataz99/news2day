@@ -112,8 +112,13 @@ const Settings = () => {
          }
        );
 
-       const updatedUser = response.data.data || response.data;
-       setUser({ ...user, ...updatedUser });
+       const newUserData = { 
+         ...user, 
+         firstName: state.formData.firstName,
+         lastName: state.formData.lastName,
+         email: state.formData.email
+       };
+       setUser(newUserData);
        dispatch({ type: 'SET_MESSAGE', payload: { text: 'Profile updated successfully!', isError: false } });
     } catch (error) {
       dispatch({
